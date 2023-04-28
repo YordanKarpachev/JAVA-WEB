@@ -11,8 +11,13 @@ public class ZooConfig {
         return new Cat();
     }
 
-    @Bean
+    @Bean("normalDog")
     public Animal dog(){
         return new Dog();
+    }
+
+    @Bean("mySuperDog")
+    public Animal superDog(){
+        return new Dog(true);
     }
 }
