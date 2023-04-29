@@ -2,8 +2,14 @@ package com.example.springfundamentals.iok;
 
 import jakarta.annotation.PostConstruct;
 import org.springframework.beans.factory.BeanNameAware;
+import org.springframework.beans.factory.DisposableBean;
 
-public class Dog implements Animal, BeanNameAware {
+public class Dog implements Animal, BeanNameAware , DisposableBean {
+
+    @Override
+    public void destroy() throws Exception {
+        System.out.println("The dog is die...");
+    }
     @Override
     public void setBeanName(String name) {
         System.out.println("The name of is : " + name);
@@ -32,6 +38,7 @@ public class Dog implements Animal, BeanNameAware {
             System.out.println("bark bark");
         }
     }
+
 
 
 }
