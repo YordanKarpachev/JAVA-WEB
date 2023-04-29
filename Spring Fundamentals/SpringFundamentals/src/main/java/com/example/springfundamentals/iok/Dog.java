@@ -11,7 +11,7 @@ public class Dog implements Animal, BeanNameAware {
 
     @PostConstruct
     public void afterInt(){
-        System.out.println("This is DOGGG");
+        System.out.println("This is DOG");
     }
 
     private boolean isSuperDog;
