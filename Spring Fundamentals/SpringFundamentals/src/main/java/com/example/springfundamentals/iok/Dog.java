@@ -1,6 +1,19 @@
 package com.example.springfundamentals.iok;
 
-public class Dog implements Animal {
+import jakarta.annotation.PostConstruct;
+import org.springframework.beans.factory.BeanNameAware;
+
+public class Dog implements Animal, BeanNameAware {
+    @Override
+    public void setBeanName(String name) {
+        System.out.println("The name of is : " + name);
+    }
+
+    @PostConstruct
+    public void afterInt(){
+        System.out.println("This is DOGGG");
+    }
+
     private boolean isSuperDog;
 
     public Dog() {
@@ -19,4 +32,6 @@ public class Dog implements Animal {
             System.out.println("bark bark");
         }
     }
+
+
 }
