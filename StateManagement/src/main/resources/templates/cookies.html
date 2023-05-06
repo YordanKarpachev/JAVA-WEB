@@ -8,15 +8,17 @@
         Current language is <span th:text="${lang}"/>.
 
 <br/>
-        <form th:action="@{/cookiesHTML}" th:method="post">
+        <form th:action="@{/cookies}" th:method="post">
 
             <select name="language" id="language">
             Choose language:
-                <option value="en">English</option>
-                <option value="de">Deutsch</option>
-                <option value="bg">Bulgarish</option>
+                <option value="en" th:selected="${lang} == 'en'">English</option>
+                <option value="de" th:selected="${lang} == 'de'">Deutsch</option>
+                <option value="bg" th:selected="${lang} == 'bg'">Bulgarish</option>
 
             </select>
+
+            <input type="Submit" value="submit">
 
         </form>
 
