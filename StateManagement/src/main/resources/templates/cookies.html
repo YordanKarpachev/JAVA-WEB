@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en"  xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+        Current language is <span th:text="${lang}"/>.
+
+<br/>
+        <form th:action="@{/cookiesHTML}" th:method="post">
+
+            <select name="language" id="language">
+            Choose language:
+                <option value="en">English</option>
+                <option value="de">Deutsch</option>
+                <option value="bg">Bulgarish</option>
+
+            </select>
+
+        </form>
+
+</body>
+</html>
